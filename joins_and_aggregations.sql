@@ -14,13 +14,11 @@ select
 	users.email,
 	products.name,
 	orders.quantity,
-	orders.created_at::date
 from orders
 join users
 	on orders.user_id = users.id
 join products
 	on orders.product_id = products.id;
-order by orders.created_at::date asc;
 
 select users.email
 from users
